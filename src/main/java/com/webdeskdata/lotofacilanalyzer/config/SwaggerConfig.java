@@ -5,8 +5,11 @@ import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.info.License;
+import io.swagger.v3.oas.models.servers.Server;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import java.util.List;
 
 @Configuration
 public class SwaggerConfig {
@@ -19,14 +22,17 @@ public class SwaggerConfig {
                 .info(
                         new Info()
                                 .title("Lotofácil Analyzer API")
-                                .version("1.0.0")
+                                .version("v1")
                                 .description("""
-                                        API para:
-                                        - sincronização da Lotofácil
-                                        - geração CSV
-                                        - geração Excel
-                                        - estatísticas
-                                        - dataset para IA
+                                        API responsável por:
+
+                                        - sincronização de concursos
+                                        - geração de CSV
+                                        - geração de Excel
+                                        - estatísticas da Lotofácil
+                                        - análise de repetições
+                                        - verificação de jogos
+                                        - geração de dataset para IA
                                         """)
                                 .contact(
                                         new Contact()
@@ -38,6 +44,12 @@ public class SwaggerConfig {
                                                 .name("MIT")
                                 )
                 )
+
+                .servers(List.of(
+                        new Server()
+                                .url("http://localhost:8080")
+                                .description("Servidor Local")
+                ))
 
                 .externalDocs(
                         new ExternalDocumentation()

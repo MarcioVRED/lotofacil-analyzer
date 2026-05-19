@@ -22,7 +22,7 @@ lotofacil:
   export:
     directory: ${LOTOFACIL_EXPORT_DIRECTORY:.}
   http:
-    connect-timeout: ${LOTOFACIL_HTTP_CONNECT_TIMEOUT:5s}
-    read-timeout: ${LOTOFACIL_HTTP_READ_TIMEOUT:10s}
+    connect-timeout: ${LOTOFACIL_HTTP_CONNECT_TIMEOUT:15s}
+    read-timeout: ${LOTOFACIL_HTTP_READ_TIMEOUT:20s}
   sync:
     max-concurso: ${LOTOFACIL_SYNC_MAX_CONCURSO:4000}

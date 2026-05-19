@@ -13,7 +13,7 @@ public class RestClientConfig {
 
     @Bean
     public RestTemplate restTemplate(
-            @Value("${lotofacil.http.connect-timeout:5s}") Duration connectTimeout,
+            @Value("${lotofacil.http.connect-timeout:15s}") Duration connectTimeout,
             @Value("${lotofacil.http.read-timeout:10s}") Duration readTimeout
     ) {
         SimpleClientHttpRequestFactory requestFactory =
