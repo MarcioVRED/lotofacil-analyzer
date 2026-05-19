@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: lotofacil-analyzer
+
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/lotofacil}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+
+  jpa:
+    hibernate:
+      ddl-auto: ${JPA_DDL_AUTO:update}
+    show-sql: ${JPA_SHOW_SQL:false}
+    open-in-view: false
+
+server:
+  port: ${SERVER_PORT:8080}
+
+lotofacil:
+  caixa:
+    base-url: ${CAIXA_LOTOFACIL_BASE_URL:https://servicebus2.caixa.gov.br/portaldeloterias/api/lotofacil/}
+  export:
+    directory: ${LOTOFACIL_EXPORT_DIRECTORY:.}
+  http:
+    connect-timeout: ${LOTOFACIL_HTTP_CONNECT_TIMEOUT:5s}
+    read-timeout: ${LOTOFACIL_HTTP_READ_TIMEOUT:10s}
+  sync:
+    max-concurso: ${LOTOFACIL_SYNC_MAX_CONCURSO:4000}
