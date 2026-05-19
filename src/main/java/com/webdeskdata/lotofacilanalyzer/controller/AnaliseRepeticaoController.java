@@ -19,7 +19,7 @@ public class AnaliseRepeticaoController {
 
     @GetMapping
     public List<AnaliseRepeticaoResponse> buscarConcursosParecidos(
-            @RequestParam(defaultValue = "12") Integer iguais
+            @RequestParam(defaultValue = "14") Integer iguais
     ) {
 
         return analiseRepeticaoService.buscarConcursosParecidos(iguais);
